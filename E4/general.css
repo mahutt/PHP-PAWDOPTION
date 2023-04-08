@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0efeb;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #6B705C;
+    text-align: center;
+    color: #f0efeb;
+}
+
+.branding {
+    display: flex;
+}
+
+.logo {  
+    padding: 0px 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.titles {
+    text-align: left;
+}
+
+#date {
+    text-align: end;
+}
+
+.main {
+    display: inline-flex;
+}
+
+.menubox {
+    min-width: 18%;
+}
+
+.menu {
+    position: -webkit-sticky;
+    position: sticky;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #DDBEA9;
+    top: 10px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 10px; 
+    text-decoration: none;  
+    border-radius: 15px;
+    color: black;
+}
+
+.menu a:hover {
+    background-color: #B7B7A4;
+    color: #f0efeb;
+}
+
+.content {
+    /* max-width: 80%;  */
+    min-height: 650px;
+    padding: 20px;
+    background-color: #f0efeb;
+}
+
+.content a {
+    text-decoration: none;
+}
+
+.content p {
+    font-size: 20px;
+}
+
+.footer {
+    clear: right;
+    width: 100%;
+    padding: 20px;
+    background-color: #6B705C;
+    color: #DDBEA9;
+    text-align: center;
+    font-size: 14px;
+}
+
+.bubbles {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bubble {
+    max-width: 500px;
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 30px;
+    background-color:#A5A58D;
+    box-shadow: 10px 10px rgb(29, 29, 29);
+    color: black;
+}
+
+.bubble:hover {
+    background-color: #B7B7A4;
+}
+
+.bubble img {
+    width: 400px;
+    position: relative;
+    margin: auto;
+}
+
+.prompt {
+    font-weight: bold;
+}
+
+input[type=submit], input[type=reset], .interested-button {
+    min-width: 100px;
+    background-color: #CB997E;
+    border: 1px solid black;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 5px 5px rgb(29, 29, 29);
+}
+
+input[type=submit]:hover, input[type=reset]:hover, .interested-button:hover {
+background-color: #DDBEA9;
+}
+
+input[type=submit]:active, input[type=reset]:active, .interested-button:active {
+    position: relative;
+    box-shadow: none;
+    left: 5px;
+    top: 5px;
+}
+
+.pet-bubble {
+    width: 100%;
+    /* max-width: 500px; */
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 30px;
+    background-color:#A5A58D;
+    box-shadow: 10px 10px rgb(29, 29, 29);
+    color: black;
+}
+
+
+
+.pet-bubble:hover {
+    background-color: #B7B7A4;
+}
+
+.pet-bubble .pet-img {
+    width: 40%;
+    padding: 10px;
+
+}
+
+.pet-bubble .pet-img img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+.pet-bubble .pet-info {
+    width: 20%;
+    padding: 10px;
+}
+
+.pet-bubble .pet-info ul {
+    padding: 10px;
+}
+
+
+.pet-bubble .pet-description {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pet-bubble .pet-description p {
+    padding: 15px;
+    font-style: italic;
+    background-color: #DDBEA9;
+    border-radius: 25px;
+    box-shadow: 5px 5px rgb(29, 29, 29, 0.8);
+}
+
