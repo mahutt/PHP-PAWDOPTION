@@ -6,10 +6,15 @@ if (isset($_POST["submit"])) {
     if (isset($_POST["childcompatible"])) {$compatibility[] = $_POST["childcompatible"];}
 
     $petdata = [$_POST["species"], $_POST["gender"], $_POST["breed"], $_POST["age"], implode(",", $compatibility)];
-    foreach ($petdata as $val) {
-        echo "$val ";
-    }
+    // foreach ($petdata as $val) {
+    //     echo "$val ";
+    // }
+
 }
+
+$pets = fopen("db/availablepets.txt", "r");
+echo fgets($pets);
+fclose($pets);
 
 
 
