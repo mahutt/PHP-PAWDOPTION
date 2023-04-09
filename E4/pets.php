@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<?php 
+if (isset($_POST["submit"])) {
+    $compatibility = array();
+    if (isset($_POST["catcompatible"])) {$compatibility[] = $_POST["catcompatible"];}
+    if (isset($_POST["dogcompatible"])) {$compatibility[] = $_POST["dogcompatible"];}
+    if (isset($_POST["childcompatible"])) {$compatibility[] = $_POST["childcompatible"];}
+
+    $petdata = [$_POST["species"], $_POST["gender"], $_POST["breed"], $_POST["age"], implode(",", $compatibility)];
+    foreach ($petdata as $val) {
+        echo "$val ";
+    }
+}
+
+
+
+
+?><!DOCTYPE html>
 
 <html lang="en">
 

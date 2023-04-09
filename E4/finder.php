@@ -32,17 +32,18 @@
                 <br>Your new best friend is just a few
                 clicks away.
             </p>
-            <form class="bubble" id="catform" name="catform" onsubmit="return validateCatForm()">
+            <form action="pets.php" method="POST" class="bubble" id="catform" name="catform" onsubmit="return validateCatForm()">
                 <h2><u>Cat Person Form</u></h2>
+                <input type="hidden" name="species" value="cat">
                 <label class="prompt">Preferred Gender</label>
                 <br>
-                <label><input type="radio" name="animalGender" value="female">Female</label>
-                <label><input type="radio" name="animalGender" value="male">Male</label>
-                <label><input type="radio" name="animalGender" value="dontCare">Doesn't Matter</label>
+                <label><input type="radio" name="gender" value="female">Female</label>
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="dontCare">Doesn't Matter</label>
                 <br><br>
                 <label for="catBreed" class="prompt">Preffered Breed</label>
                 <br>
-                <select name="catBreed" id="catBreed">
+                <select name="breed" id="catBreed">
                     <option disabled selected value>-- select an option --</option>
                     <option value="britishShorthair">British Shorthair</option>
                     <option value="persian">Persian</option>
@@ -55,33 +56,33 @@
                     <option value="dontCare">Doesn't Matter</option>
                 </select><br><br>
                 <label for="catAge" class="prompt">Preffered Age</label><br>
-                <select name="catAge" id="catAge">
+                <select name="age" id="catAge">
                     <option disabled selected value>-- select an option --</option>
-                    <option value="lessThan1">Less than 1 year</option>
-                    <option value="1to4">Between 1 and 4 years</option>
-                    <option value="4to8">Between 4 and 8 years</option>
-                    <option value="moreThan8">More than 8 years</option>
+                    <option value="<5">Less than 5 years</option>
+                    <option value="5-10">Between 5 and 10 years</option>
+                    <option value=">10">Over 10 years</option>
                     <option value="dontCare">Doesn't Matter</option>
                 </select><br><br>
                 <label class="prompt">Select any of the following:</label><br>
-                <label><input type="checkbox" name="behaviour" value="catCompatible">Must get along with cats</label><br>
-                <label><input type="checkbox" name="behaviour" value="dogCompatible">Must get along with dogs</label><br>
-                <label><input type="checkbox" name="behaviour" value="childCompatible">Must get along with small children</label>
+                <label><input type="checkbox" name="catcompatible" value="cats">Must get along with cats</label><br>
+                <label><input type="checkbox" name="dogcompatible" value="dogs">Must get along with dogs</label><br>
+                <label><input type="checkbox" name="childcompatible" value="children">Must get along with small children</label>
                 <br><br>
-                <input type="submit">
+                <input type="submit" name="submit">
                 <input type="reset">
             </form>
-            <form class="bubble" id="dogform" name="dogform" onsubmit="return validateDogForm()">
+            <form action="pets.php" method="POST" class="bubble" id="dogform" name="dogform" onsubmit="return validateDogForm()">
                 <h2><u>Dog Person Form</u></h2>
+                <input type="hidden" name="species" value="dog">
                 <label class="prompt">Preferred Gender</label>
                 <br>
-                <label><input type="radio" name="animalGender" value="female">Female</label>
-                <label><input type="radio" name="animalGender" value="male">Male</label>
-                <label><input type="radio" name="animalGender" value="dontCare">Doesn't Matter</label>
+                <label><input type="radio" name="gender" value="female">Female</label>
+                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="dontCare">Doesn't Matter</label>
                 <br><br>
                 <label for="dogBreed" class="prompt">Preffered Breed</label>
                 <br>
-                <select name="dogBreed" id="dogBreed">
+                <select name="breed" id="dogBreed">
                     <option disabled selected value>-- select an option --</option>
                     <option value="goldenRetriever">Golden Retriever</option>
                     <option value="labradorRetriever">Labrador Retriever</option>
@@ -94,21 +95,20 @@
                 </select>
                 <br><br>
                 <label for="dogAge" class="prompt">Preffered Age</label><br>
-                <select name="dogAge" id="dogAge">
+                <select name="age" id="dogAge">
                     <option disabled selected value>-- select an option --</option>
-                    <option value="lessThan1">Less than 1 year</option>
-                    <option value="1to4">Between 1 and 4 years</option>
-                    <option value="4to8">Between 4 and 8 years</option>
-                    <option value="moreThan8">More than 8 years</option>
+                    <option value="<5">Less than 5 years</option>
+                    <option value="5-10">Between 5 and 10 years</option>
+                    <option value=">10">Over 10 years</option>
                     <option value="dontCare">Doesn't Matter</option>
                 </select>
                 <br><br>
                 <label class="prompt">Select any of the following:</label><br>
-                <label><input type="checkbox" name="behaviour" value="catCompatible">Must get along with cats</label><br>
-                <label><input type="checkbox" name="behaviour" value="dogCompatible">Must get along with dogs</label><br>
-                <label><input type="checkbox" name="behaviour" value="childCompatible">Must get along with small children</label>
+                <label><input type="checkbox" name="catcompatible" value="cats">Must get along with cats</label><br>
+                <label><input type="checkbox" name="dogcompatible" value="dogs">Must get along with dogs</label><br>
+                <label><input type="checkbox" name="childcompatible" value="children">Must get along with small children</label>
                 <br><br>
-                <input type="submit">
+                <input type="submit" name="submit">
                 <input type="reset">
             </form>
         </div>
