@@ -1,4 +1,30 @@
 <?php 
+
+function validPet($pet) {
+    return ($_POST["species"] == $pet[2]
+        && ($_POST["gender"] == "dc" || $_POST["gender"] == $pet[3])
+        && validPetAge($_POST["age"], $pet[4])
+        
+        // add the additional checks!!
+    );
+}
+
+// NOTE: MUST MAKE IT POSSIBLE TO GIVE A PET AWAY WITH SPECIFIC AGE SELECTION!
+function validPetAge($RANGE, $age) {
+    if ($RANGE == "dc") {
+        return true;
+    }
+    else if ($RANGE == "<5") {
+        return ($age < 5);
+    }
+    else if ($RANGE == "5-10") {
+        return ($age > 5 && $age < 10);
+    }
+    else {
+        return ($age > 10);
+    }
+}
+
 if (isset($_POST["submit"])) {
     $compatibility = array();
     if (isset($_POST["catcompatible"])) {$compatibility[] = $_POST["catcompatible"];}
@@ -9,15 +35,20 @@ if (isset($_POST["submit"])) {
     // foreach ($petdata as $val) {
     //     echo "$val ";
     // }
-
 }
-
-$pets = fopen("db/availablepets.txt", "r");
-echo fgets($pets);
+// CURRENT:
+// id:owner:species:breed:age:gender:compatibility:quote:imageurl
+// IDEAL:
+// id:owner:species:gender:age:breed:compatibility:quote:imageurl
+$rankedPets = []; // key is animal id (int at beginning) and value is ranking
+$pets = file("db/availablepets.txt");
+foreach ($pets as $pet) {
+    $petArr = explode(":", $pet);
+    if (validPet($petArr)) {
+        displayPet($petArr)
+    }
+}
 fclose($pets);
-
-
-
 
 ?><!DOCTYPE html>
 

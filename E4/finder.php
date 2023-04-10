@@ -39,7 +39,7 @@
                 <br>
                 <label><input type="radio" name="gender" value="female">Female</label>
                 <label><input type="radio" name="gender" value="male">Male</label>
-                <label><input type="radio" name="gender" value="dontCare">Doesn't Matter</label>
+                <label><input type="radio" name="gender" value="dc">Doesn't Matter</label>
                 <br><br>
                 <label for="catBreed" class="prompt">Preffered Breed</label>
                 <br>
@@ -53,7 +53,7 @@
                     <option value="sphynx">Sphynx</option>
                     <option value="mixed">Mixed Breed</option>
                     <option value="else">Else</option>
-                    <option value="dontCare">Doesn't Matter</option>
+                    <option value="dc">Doesn't Matter</option>
                 </select><br><br>
                 <label for="catAge" class="prompt">Preffered Age</label><br>
                 <select name="age" id="catAge">
@@ -61,7 +61,7 @@
                     <option value="<5">Less than 5 years</option>
                     <option value="5-10">Between 5 and 10 years</option>
                     <option value=">10">Over 10 years</option>
-                    <option value="dontCare">Doesn't Matter</option>
+                    <option value="dc">Doesn't Matter</option>
                 </select><br><br>
                 <label class="prompt">Select any of the following:</label><br>
                 <label><input type="checkbox" name="catcompatible" value="cats">Must get along with cats</label><br>
@@ -78,7 +78,7 @@
                 <br>
                 <label><input type="radio" name="gender" value="female">Female</label>
                 <label><input type="radio" name="gender" value="male">Male</label>
-                <label><input type="radio" name="gender" value="dontCare">Doesn't Matter</label>
+                <label><input type="radio" name="gender" value="dc">Doesn't Matter</label>
                 <br><br>
                 <label for="dogBreed" class="prompt">Preffered Breed</label>
                 <br>
@@ -91,7 +91,7 @@
                     <option value="poodle">Poodle</option>
                     <option value="mixed">Mixed Breed</option>
                     <option value="else">Else</option>
-                    <option value="dontCare">Doesn't Matter</option>
+                    <option value="dc">Doesn't Matter</option>
                 </select>
                 <br><br>
                 <label for="dogAge" class="prompt">Preffered Age</label><br>
@@ -100,7 +100,7 @@
                     <option value="<5">Less than 5 years</option>
                     <option value="5-10">Between 5 and 10 years</option>
                     <option value=">10">Over 10 years</option>
-                    <option value="dontCare">Doesn't Matter</option>
+                    <option value="dc">Doesn't Matter</option>
                 </select>
                 <br><br>
                 <label class="prompt">Select any of the following:</label><br>
