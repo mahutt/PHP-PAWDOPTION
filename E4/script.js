@@ -98,35 +98,38 @@ function validateGiveawayForm() {
     }
 }
 
-// function validateGiveawayForm() {
-//     const formElements = document.getElementById("signupform");
-//     if (!formElements["animalType"][0].checked && !formElements["animalType"][1].checked) {
-//         alert("Please choose an animal type.");
-//         return false;
-//     }
-//     else if (formElements["animalBreed"].value == "") {
-//         alert("Please choose an animal breed.");
-//         formElements["animalBreed"].focus();
-//         return false;
-//     }
-// }
-
 function validateSignupForm() {
-    // const form = document.getElementById("signupform");
-    // if (form["username"].value == "" || form["username"].value == "") {
-    //     alert("All fields must be filled.");
-    //     return false;
-    // }
-    // else if (/[^[:alnum:]]/.test(form["password"].value)) {
-    //     alert("Usernames may only contain letters and digits.");
-    //     form["password"].focus();
-    //     return false;
-    // }
-    // else if (/[^[:alnum:]]/.test(form["password"].value)) {
-    //     alert("Passwords may only contain letters and digits.");
-    //     form["password"].focus();
-    //     return false;
-    // }
-    alert("ooooh");
-    return false;
+    const form = document.getElementById("signupform");
+    if (form["username"].value == "" || form["password"].value == "") {
+        alert("All fields must be filled.");
+        return false;
+    }
+    else if (!/^[a-zA-Z0-9]*$/.test(form["username"].value)) {
+        alert("Usernames may only contain letters and digits.");
+        form["username"].focus();
+        return false;
+    }
+    else if (!/^[a-zA-Z0-9]*$/.test(form["password"].value)) {
+        alert("Passwords may only contain letters and digits.");
+        form["password"].focus();
+        return false;
+    }
+    else if (form["password"].value.length < 4) {
+        alert("Passwords must be atleast 4 characters long.");
+        form["password"].focus();
+        return false;
+    }
+    else if (!/[a-zA-Z]/.test(form["password"].value)) {
+        alert("Passwords must contain at least 1 letter.");
+        form["password"].focus();
+        return false;
+    }
+    else if (!/\d/.test(form["password"].value)) {
+        alert("Passwords must contain at least 1 digit.");
+        form["password"].focus();
+        return false;
+    }
+    else {
+        return true;
+    }
 }

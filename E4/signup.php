@@ -1,4 +1,31 @@
-<!DOCTYPE html>
+<?php 
+
+function isUnique($NewUsername) {
+    $users = file("db/login.txt");
+    foreach ($users as $user) {
+        $ExistingUsername = substr($user, 0, strpos($user, ":"));
+        if ($NewUsername == $ExistingUsername) {
+            return false;
+        }
+    }
+    return true;
+}
+
+if (isset($_POST["submit"])) {
+    if (isUnique($_POST["username"])) {
+        $users = fopen("file.txt", "w");
+        fwrite($users, $_POST["username"].":".$_POST["password"]);
+        fclose($users);
+        $signupStatus = "Account succesfully created. Feel free to login."; 
+    }
+    else {
+        $signupStatus = "Error: A user with that name already Exists. Please try again."; 
+    }
+}
+
+// TO DO NEXT: PRINT CONFIRMATION SUCCESS/FAIL MESSAGE SOMEWHERE IN MAIN
+
+?><!DOCTYPE html>
 
 <html lang="en">
 
@@ -19,48 +46,37 @@
             <p>
                 To benefit from PAWDOPTION's services, create a new account using the form below.
             </p>
-            <!-- <form class="bubbles" name="signupform" id="signupform" onsubmit="return validateSignupForm()">
+            <form action="signup.php" method="POST" class="bubbles" name="signupform" id="signupform" onsubmit="return validateSignupForm()">
                 <div class="bubble">
                     <h2><u>Sign Up:</u></h2>
-                    <label for="username" class="prompt">Username</label>
+                    <label for="username">Username:</label>
                     <br>
                     <input type="text" id="username" name="username">
                     <p>*Usernames can contain letters and digits only.</p>
                     <br><br>
-                    <label for="password" class="prompt">Password</label>
+                    <label for="password">Password:</label>
                     <br>
                     <input type="text" id="password" name="password">
                     <p>
                         *Passwords may contain numbers and digits only. A password must be
                         4 characters long, and must have atleast 1 letter and atleast 1 digit.
                     </p>
+                    <?php
+                        if ($signupStatus == "") {
+                            echo "<br>";
+                        }
+                        else {
+                            echo "$signupStatus <br>";
+                        }
+                    ?>
                     <br>
-                    <input type="submit">
-                    <input type="reset">
-                </div>
-            </form> -->
-            <form class="bubbles" name="signupform" id="signupform" onsubmit="return validateSignupForm()">
-                <div class="bubble">
-                    <h2><u>Sign Up:</u></h2>
-                    <label for="username">Username:</label>
-                    <br>
-                    <input type="text" id="username" name="username">
-                    <br><br>
-                    <label for="password">Password:</label>
-                    <br>
-                    <input type="text" id="password" name="password">
-                    <br><br>
-                    <input type="submit">
+                    <input type="submit" name="submit">
                     <input type="reset">
                 </div>
             </form>
         </div>
     </div>
-    
     <?php include 'footer.php' ?>
-
     <script src="script.js"></script>
-
 </body>
-
 </html>
