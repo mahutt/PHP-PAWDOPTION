@@ -39,11 +39,6 @@
                     <input type="reset">
                 </div>
             </form> -->
-            <script>
-                function validateSignupForm() {
-                    return false;
-                }
-            </script>
             <form class="bubbles" name="signupform" id="signupform" onsubmit="return validateSignupForm()">
                 <div class="bubble">
                     <h2><u>Sign Up:</u></h2>
