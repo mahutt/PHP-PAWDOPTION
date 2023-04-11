@@ -85,17 +85,7 @@ if (!isset($_POST["submit"])) {
 <body>
     <?php include 'header.php'; ?>
     <div class="main">
-        <div class="menubox">
-            <div class="menu">
-                <a href="home.php">Home Page</a>
-                <a href="pets.php">Browse Available Pets</a>
-                <a href="finder.php">Find a dog/cat</a>
-                <a href="dogcare.php">Dog Care</a>
-                <a href="catcare.php">Cat Care</a>
-                <a href="give.php">Have a pet to give Away</a>
-                <a href="contact.php">Contact Us</a>
-            </div>
-        </div>
+        <?php include 'menubox.php' ?>
         <div class="content">
             <?php displayValidPets(); ?>
             <!-- <div class="pet-bubble">

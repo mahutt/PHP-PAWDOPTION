@@ -1,4 +1,4 @@
 1:Nina:Bert:dog:Male:6:Labrador Retriever:dogs,children:img/pets/bert.jpg:Bert has been a joy to raise. It's rather unfortunate that I must move away to Britain for work, since Bert really isn't all that fond of the Europeen experience. He's a beautiful soul, inside and out!
 2:Petunia M:Jessica:cat:Female:12:Persian:cats:img/pets/Jessica.jpg:Jessica loves belly rubs, cat nip, and late night walks. She sleeps after a bowl of warm milk. Big dogs scare her, but she is capable of getting along with smaller dogs. Jessica needs her ears cleaned once a week due to a chronic ear infection.
 3:Ed Sheeran:Lil Ed:cat:Male:9:British Shorthair:cats,dogs,children:img/pets/ed.jpg:Little Ed belonged to my mother, who deeply loved her dog. Her passing means that someone else will have the privelege to love and care for Lil Ed.
-4:Oleksiy:Jerry:dog:Male:16:Mixed Breed: NEED TO ADD HERE
+4:Oleksiy:Jerry:dog:Male:16:Mixed Breed:cats,dogs,children::Jerry is an old soul, but poorly trained. He knows a few tricks, and metal in his paw from a car accident. Despite his imperfections, its hard not to love him more than anything.

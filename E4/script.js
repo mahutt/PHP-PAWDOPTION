@@ -97,3 +97,36 @@ function validateGiveawayForm() {
         return true;
     }
 }
+
+// function validateGiveawayForm() {
+//     const formElements = document.getElementById("signupform");
+//     if (!formElements["animalType"][0].checked && !formElements["animalType"][1].checked) {
+//         alert("Please choose an animal type.");
+//         return false;
+//     }
+//     else if (formElements["animalBreed"].value == "") {
+//         alert("Please choose an animal breed.");
+//         formElements["animalBreed"].focus();
+//         return false;
+//     }
+// }
+
+function validateSignupForm() {
+    // const form = document.getElementById("signupform");
+    // if (form["username"].value == "" || form["username"].value == "") {
+    //     alert("All fields must be filled.");
+    //     return false;
+    // }
+    // else if (/[^[:alnum:]]/.test(form["password"].value)) {
+    //     alert("Usernames may only contain letters and digits.");
+    //     form["password"].focus();
+    //     return false;
+    // }
+    // else if (/[^[:alnum:]]/.test(form["password"].value)) {
+    //     alert("Passwords may only contain letters and digits.");
+    //     form["password"].focus();
+    //     return false;
+    // }
+    alert("ahhh");
+    return false;
+}
