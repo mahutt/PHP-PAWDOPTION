@@ -37,22 +37,22 @@
                 <input type="hidden" name="species" value="cat">
                 <label class="prompt">Preferred Gender</label>
                 <br>
-                <label><input type="radio" name="gender" value="female">Female</label>
-                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="Female">Female</label>
+                <label><input type="radio" name="gender" value="Male">Male</label>
                 <label><input type="radio" name="gender" value="dc">Doesn't Matter</label>
                 <br><br>
                 <label for="catBreed" class="prompt">Preffered Breed</label>
                 <br>
                 <select name="breed" id="catBreed">
                     <option disabled selected value>-- select an option --</option>
-                    <option value="britishShorthair">British Shorthair</option>
-                    <option value="persian">Persian</option>
-                    <option value="maineCoon">Maine Coon</option>
-                    <option value="americanShorthair">American Shorthair</option>
-                    <option value="scottishFold">Scottish Fold</option>
-                    <option value="sphynx">Sphynx</option>
-                    <option value="mixed">Mixed Breed</option>
-                    <option value="else">Else</option>
+                    <option value="British Shorthair">British Shorthair</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Maine Coon">Maine Coon</option>
+                    <option value="American Shorthair">American Shorthair</option>
+                    <option value="Scottish Fold">Scottish Fold</option>
+                    <option value="Sphynx">Sphynx</option>
+                    <option value="Mixed Breed">Mixed Breed</option>
+                    <!-- <option value="else">Else</option> -->
                     <option value="dc">Doesn't Matter</option>
                 </select><br><br>
                 <label for="catAge" class="prompt">Preffered Age</label><br>
@@ -76,21 +76,21 @@
                 <input type="hidden" name="species" value="dog">
                 <label class="prompt">Preferred Gender</label>
                 <br>
-                <label><input type="radio" name="gender" value="female">Female</label>
-                <label><input type="radio" name="gender" value="male">Male</label>
+                <label><input type="radio" name="gender" value="Female">Female</label>
+                <label><input type="radio" name="gender" value="Male">Male</label>
                 <label><input type="radio" name="gender" value="dc">Doesn't Matter</label>
                 <br><br>
                 <label for="dogBreed" class="prompt">Preffered Breed</label>
                 <br>
                 <select name="breed" id="dogBreed">
                     <option disabled selected value>-- select an option --</option>
-                    <option value="goldenRetriever">Golden Retriever</option>
-                    <option value="labradorRetriever">Labrador Retriever</option>
-                    <option value="frenchBulldog">French Bulldog</option>
-                    <option value="beagle">Beagle</option>
-                    <option value="poodle">Poodle</option>
-                    <option value="mixed">Mixed Breed</option>
-                    <option value="else">Else</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="Labrador Retriever">Labrador Retriever</option>
+                    <option value="French Bulldog">French Bulldog</option>
+                    <option value="Beagle">Beagle</option>
+                    <option value="Poodle">Poodle</option>
+                    <option value="Mixed Breed">Mixed Breed</option>
+                    <!-- <option value="else">Else</option> -->
                     <option value="dc">Doesn't Matter</option>
                 </select>
                 <br><br>

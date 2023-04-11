@@ -1,11 +1,12 @@
 <?php 
 
 function validPet($pet) {
-    return ($_POST["species"] == $pet[2]
-        && ($_POST["gender"] == "dc" || $_POST["gender"] == $pet[3])
-        && validPetAge($_POST["age"], $pet[4])
-        
-        // add the additional checks!!
+    $compatibility = array();
+    return ($_POST["species"] == $pet[3]
+        && ($_POST["gender"] == "dc" || $_POST["gender"] == $pet[4])
+        && validPetAge($_POST["age"], $pet[5])
+        && ($_POST["breed"] == "dc" || $_POST["breed"] == $pet[6])
+        && validCompatibility(explode(",", $pet[7]))
     );
 }
 
@@ -25,31 +26,52 @@ function validPetAge($RANGE, $age) {
     }
 }
 
-if (isset($_POST["submit"])) {
-    $compatibility = array();
-    if (isset($_POST["catcompatible"])) {$compatibility[] = $_POST["catcompatible"];}
-    if (isset($_POST["dogcompatible"])) {$compatibility[] = $_POST["dogcompatible"];}
-    if (isset($_POST["childcompatible"])) {$compatibility[] = $_POST["childcompatible"];}
-
-    $petdata = [$_POST["species"], $_POST["gender"], $_POST["breed"], $_POST["age"], implode(",", $compatibility)];
-    // foreach ($petdata as $val) {
-    //     echo "$val ";
-    // }
+function validCompatibility($petComp) {
+    return ( (!isset($_POST["catcompatible"]) || in_array("cats", $petComp))
+        && (!isset($_POST["dogcompatible"]) || in_array("dogs", $petComp))
+        && (!isset($_POST["childcompatible"]) || in_array("children", $petComp)) );
 }
-// CURRENT:
-// id:owner:species:breed:age:gender:compatibility:quote:imageurl
-// IDEAL:
-// id:owner:species:gender:age:breed:compatibility:quote:imageurl
-$rankedPets = []; // key is animal id (int at beginning) and value is ranking
-$pets = file("db/availablepets.txt");
-foreach ($pets as $pet) {
-    $petArr = explode(":", $pet);
-    if (validPet($petArr)) {
-        displayPet($petArr)
+
+function printPetBubble($petArr) {
+    echo "<div class=\"pet-bubble\">
+    <div class=\"pet-img\"><img src=\"$petArr[8]\" alt=\"\"></div> 
+    <div class=\"pet-info\">
+        <h1>$petArr[2]</h1>
+        <ul>
+            <li>$petArr[6]</li>
+            <li>Age $petArr[5]</li>
+            <li>$petArr[4]</li>";
+
+    foreach (explode(",", $petArr[7]) as $compatible) {
+        echo "<li>Gets along with $compatible</li>";
+    }    
+    echo "</ul>
+    </div>
+    <div class=\"pet-description\">
+        <p>
+            \"$petArr[9]\"
+        </p>
+        <div class=\"interested-button-wrapper\">
+            <button class=\"interested-button\">Interested</button>
+        </div>
+    </div>
+    </div>";
+}
+
+function displayValidPets() {
+    $pets = file("db/availablepets.txt");
+    foreach ($pets as $pet) {
+        $petArr = explode(":", $pet);
+        if (validPet($petArr)) {
+            printPetBubble($petArr);
+        }
     }
 }
-fclose($pets);
 
+if (!isset($_POST["submit"])) {
+    header("Location: finder.php");
+    die();
+}
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -75,7 +97,8 @@ fclose($pets);
             </div>
         </div>
         <div class="content">
-            <div class="pet-bubble">
+            <?php displayValidPets(); ?>
+            <!-- <div class="pet-bubble">
                 <div class="pet-img"><img src="img/pets/bert.jpg" alt=""></div>
                 <div class="pet-info">
                     <h1>Bert</h1>
@@ -121,7 +144,7 @@ fclose($pets);
                 </div>
             </div>
             <div class="pet-bubble">
-                <div class="pet-img"><img src="img/pets/ed.jpg" alt=""></div> 
+                <div class="pet-img"><img src="img/pets/jerry.jpg" alt=""></div> 
                 <div class="pet-info">
                     <h1>Jerry</h1>
                     <ul>
@@ -142,7 +165,7 @@ fclose($pets);
                         <button class="interested-button">Interested</button>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="pet-bubble">
                 <p>
                     Images sources: 
@@ -158,5 +181,4 @@ fclose($pets);
     <script src="script.js"></script>
 
 </body>
-</html> 
-
+</html>
