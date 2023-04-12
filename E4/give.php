@@ -1,4 +1,13 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    die();
+}
+if (isset($_POST["submit"])) {
+    echo "submitted";
+}
+?><!DOCTYPE html>
 
 <html lang="en">
 
@@ -14,7 +23,7 @@
         <?php include 'menubox.php' ?>
         <div class="content">
             <h1>
-                Have a pet to give away?
+                <?php echo $_SESSION["username"]; ?>, do you have a pet to give away?
             </h1>
             <p>
                 Below is a form to fill out if you plan on putting your pet up for adoption with us.
@@ -22,7 +31,7 @@
                 Please note that, should we accept to provide adoption services for your pet, the owner
                 is responsible for bringing the animal to our on-site location.
             </p>
-            <form class="bubbles" name="giveawayform" id="giveawayform" onsubmit="return validateGiveawayForm()">
+            <form action="give.php" method="POST" class="bubbles" name="giveawayform" id="giveawayform" onsubmit="return validateGiveawayForm()">
                 <div class="bubble">
                     <h2><u>Pet Information:</u></h2>
                     <label class="prompt">Animal Type</label>
@@ -30,49 +39,46 @@
                     <label><input type="radio" name="animalType" value="cat">Cat</label>
                     <label><input type="radio" name="animalType" value="dog">Dog</label>
                     <br><br>
+                    <label for="animalName" class="prompt">Animal's Name:</label>
+                    <br>
+                    <input type="text" id="animalName" name="animalName">
+                    <br><br>
+                    <label for="animalAge" class="prompt">Animal's Age</label><br>
+                    <input type="number" name="animalAge" id="animalAge" min="0">
+                    <br><br>
                     <label for="animalBreed" class="prompt">Animal's Breed</label>
                     <br>
                     <select name="animalBreed" id="animalBreed">
                         <option disabled selected value>-- select an option --</option>
-                        <option value="britishShorthair">British Shorthair</option>
-                        <option value="persian">Persian</option>
-                        <option value="maineCoon">Maine Coon</option>
-                        <option value="americanShorthair">American Shorthair</option>
-                        <option value="scottishFold">Scottish Fold</option>
-                        <option value="sphynx">Sphynx</option>
-                        <option value="goldenRetriever">Golden Retriever</option>
-                        <option value="labradorRetriever">Labrador Retriever</option>
-                        <option value="frenchBulldog">French Bulldog</option>
-                        <option value="beagle">Beagle</option>
-                        <option value="poodle">Poodle</option>
-                        <option value="mixed">Mixed Breed</option>
-                        <option value="else">Else</option>
-                        <option value="unsure">Not Sure</option>
-                    </select>
-                    <br><br>
-                    <label for="animalAge" class="prompt">Animal's Age</label><br>
-                    <select name="animalAge" id="animalAge">
-                        <option disabled selected value>-- select an option --</option>
-                        <option value="lessThan1">Less than 1 year</option>
-                        <option value="1to4">Between 1 and 4 years</option>
-                        <option value="4to8">Between 4 and 8 years</option>
-                        <option value="moreThan8">More than 8 years</option>
-                        <option value="unsure">Not Sure</option>
+                        <option value="British Shorthair">British Shorthair</option>
+                        <option value="Persian">Persian</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="American Shorthair">American Shorthair</option>
+                        <option value="Scottish Fold">Scottish Fold</option>
+                        <option value="Sphynx">Sphynx</option>
+                        <option value="Golden Retriever">Golden Retriever</option>
+                        <option value="Labrador Retriever">Labrador Retriever</option>
+                        <option value="French Bulldog">French Bulldog</option>
+                        <option value="Beagle">Beagle</option>
+                        <option value="Poodle">Poodle</option>
+                        <option value="Mixed">Mixed Breed</option>
+                        <!-- <option value="else">Else</option> -->
+                        <!-- <option value="unsure">Not Sure</option> -->
                     </select>
                     <br><br>
                     <label class="prompt">Animal's Gender</label>
                     <br>
-                    <label><input type="radio" name="animalGender" value="female">Female</label>
-                    <label><input type="radio" name="animalGender" value="male">Male</label>
+                    <label><input type="radio" name="animalGender" value="Female">Female</label>
+                    <label><input type="radio" name="animalGender" value="Male">Male</label>
                     <br><br>
                     <label class="prompt">Select accurate descriptors:</label><br>
-                    <label><input type="checkbox" name="behaviour" value="catCompatible">Gets along with cats</label><br>
-                    <label><input type="checkbox" name="behaviour" value="dogCompatible">Gets along with dogs</label><br>
-                    <label><input type="checkbox" name="behaviour" value="childCompatible">Suitable for families with small children</label>
+                    <label><input type="checkbox" name="catcompatible" value="cats">Gets along with cats</label><br>
+                    <label><input type="checkbox" name="dogcompatible" value="dogs">Gets along with dogs</label><br>
+                    <label><input type="checkbox" name="childcompatible" value="children">Suitable for families with small children</label>
                     <br><br>
-                    <label for="petDescription">Tell Us More About Your Pet:</label>
+                    <label for="quote">Tell Us More About Your Pet:</label>
                     <br>
-                    <textarea id="petDescription" name="petDescription" rows="4" cols="50" placeholder="(brag about your pet here - required)"></textarea>
+                    <textarea id="quote" name="quote" rows="4" cols="50" placeholder="(brag about your pet here - required)"></textarea>
                     <br><br>
                 </div>
                 <div class="bubble">
@@ -97,7 +103,6 @@
     </div>
     
     <?php include 'footer.php' ?>
-
     <script src="script.js"></script>
 
 </body>

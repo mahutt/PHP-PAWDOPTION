@@ -98,8 +98,8 @@ function validateGiveawayForm() {
     }
 }
 
-function validateSignupForm() {
-    const form = document.getElementById("signupform");
+function validateCredentials(formName) {
+    const form = document.getElementById(formName);
     if (form["username"].value == "" || form["password"].value == "") {
         alert("All fields must be filled.");
         return false;

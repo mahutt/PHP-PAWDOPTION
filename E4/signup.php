@@ -1,5 +1,7 @@
 <?php 
 
+$signupStatus = "";
+
 function isUnique($NewUsername) {
     $users = file("db/login.txt");
     foreach ($users as $user) {
@@ -13,8 +15,9 @@ function isUnique($NewUsername) {
 
 if (isset($_POST["submit"])) {
     if (isUnique($_POST["username"])) {
-        $users = fopen("file.txt", "w");
-        fwrite($users, $_POST["username"].":".$_POST["password"]);
+        $users = fopen("db/login.txt", "a");
+        // $newuser = $_POST["username"].":".$_POST["password"]."\n";
+        fwrite($users, "\n".$_POST["username"].":".$_POST["password"]);
         fclose($users);
         $signupStatus = "Account succesfully created. Feel free to login."; 
     }
@@ -46,7 +49,7 @@ if (isset($_POST["submit"])) {
             <p>
                 To benefit from PAWDOPTION's services, create a new account using the form below.
             </p>
-            <form action="signup.php" method="POST" class="bubbles" name="signupform" id="signupform" onsubmit="return validateSignupForm()">
+            <form action="signup.php" method="POST" class="bubbles" name="signupform" id="signupform" onsubmit="return validateCredentials('signupform')">
                 <div class="bubble">
                     <h2><u>Sign Up:</u></h2>
                     <label for="username">Username:</label>
