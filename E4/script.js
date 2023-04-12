@@ -54,23 +54,27 @@ function validateGiveawayForm() {
         alert("Please choose an animal type.");
         return false;
     }
-    else if (formElements["animalBreed"].value == "") {
-        alert("Please choose an animal breed.");
-        formElements["animalBreed"].focus();
+    else if (formElements["animalName"].value == "") {
+        alert("Please enter your animal's name.");
         return false;
     }
     else if (formElements["animalAge"].value == "") {
-        alert("Please choose an animal age.");
+        alert("Please enter your animal's age.");
         formElements["animalAge"].focus();
+        return false;
+    }
+    else if (formElements["animalBreed"].value == "") {
+        alert("Please choose an animal breed.");
+        formElements["animalBreed"].focus();
         return false;
     }
     else if (!formElements["animalGender"][0].checked && !formElements["animalGender"][1].checked) {
         alert("Please choose an animal gender.");
         return false;
     }
-    else if (formElements["petDescription"].value == "") {
+    else if (formElements["quote"].value == "") {
         alert("Please enter a short description.");
-        formElements["petDescription"].focus();
+        formElements["quote"].focus();
         return false;    
     }
     else if (formElements["firstName"].value == "") {

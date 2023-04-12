@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $signupStatus = "";
 
 function isUnique($NewUsername) {
@@ -26,7 +26,6 @@ if (isset($_POST["submit"])) {
     }
 }
 
-// TO DO NEXT: PRINT CONFIRMATION SUCCESS/FAIL MESSAGE SOMEWHERE IN MAIN
 
 ?><!DOCTYPE html>
 

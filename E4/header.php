@@ -8,5 +8,21 @@
             <p>Cat & Dog Adoption Agency</p>
         </div>
     </div>
-    <div id="date"></div>
+    <div class="header-end">
+        <div id="date"></div>
+        <div id="logout">
+            <form action="home.php" method="POST">
+            <?php
+                if (isset($_SESSION["username"])) {
+                    echo "<input type=\"submit\" name=\"submit\" value=\"logout\"></form>";
+                }
+                else {
+                    echo "<input type=\"submit\" name=\"submit\" value=\"login\">";
+                }
+            ?>
+            </form>
+        </div>
+    </div>
+    
+    
 </div>

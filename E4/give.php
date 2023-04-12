@@ -4,9 +4,38 @@ if (!isset($_SESSION["username"])) {
     header("Location: login.php");
     die();
 }
+$submissionStatus = "";
 if (isset($_POST["submit"])) {
-    echo "submitted";
+    // echo getFormattedInfo(); FOR TESTING PURPOSES
+    $pets = fopen("db/availablepets.txt", "a");
+    fwrite($pets, "\n".getFormattedInfo());
+    fclose($pets);
+    $submissionStatus = $_POST["animalName"]." has been succesfully added to the directory.";
 }
+
+function getFormattedInfo() {
+    $info = [];
+    $info[] = count(file("db/availablepets.txt")) + 1;
+    $info[] = $_SESSION["username"];
+    $info[] = $_POST["animalName"];
+    $info[] = $_POST["animalType"];
+    $info[] = $_POST["animalGender"]; 
+    $info[] = $_POST["animalAge"];
+    $info[] = $_POST["animalBreed"];
+
+    $compatible = [];
+    if (isset($_POST["catcompatible"])) {$compatible[] = "cats";} 
+    if (isset($_POST["dogcompatible"])) {$compatible[] = "dogs";}
+    if (isset($_POST["childcompatible"])) {$compatible[] = "children";}
+
+    $info[] = implode(",", $compatible);
+    $info[] = ""; // empty image for now
+    $info[] = $_POST["quote"];
+    $info[] = $_POST["firstName"]." ".$_POST["familyName"];
+    $info[] = $_POST["email"];
+
+    return implode(":", $info);
+} 
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -31,7 +60,7 @@ if (isset($_POST["submit"])) {
                 Please note that, should we accept to provide adoption services for your pet, the owner
                 is responsible for bringing the animal to our on-site location.
             </p>
-            <form action="give.php" method="POST" class="bubbles" name="giveawayform" id="giveawayform" onsubmit="return validateGiveawayForm()">
+            <form action="" method="POST" class="bubbles" name="giveawayform" id="giveawayform" onsubmit="return validateGiveawayForm()">
                 <div class="bubble">
                     <h2><u>Pet Information:</u></h2>
                     <label class="prompt">Animal Type</label>
@@ -95,8 +124,13 @@ if (isset($_POST["submit"])) {
                     <br>
                     <input type="text" id="email" name="email">
                     <br><br>
-                    <input type="submit">
+                    <input type="submit" name="submit">
                     <input type="reset">
+                    <?php
+                        if ($submissionStatus != "") {
+                            echo "<br><br>$submissionStatus";
+                        }
+                    ?>
                 </div>
             </form>
         </div>

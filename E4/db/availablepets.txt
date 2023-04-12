@@ -2,3 +2,5 @@
 2:Petunia M:Jessica:cat:Female:12:Persian:cats:img/pets/Jessica.jpg:Jessica loves belly rubs, cat nip, and late night walks. She sleeps after a bowl of warm milk. Big dogs scare her, but she is capable of getting along with smaller dogs. Jessica needs her ears cleaned once a week due to a chronic ear infection.:Petunia Mark:pm@gmail.com
 3:Ed Sheeran:Lil Ed:cat:Male:9:British Shorthair:cats,dogs,children:img/pets/ed.jpg:Little Ed belonged to my mother, who deeply loved her dog. Her passing means that someone else will have the privelege to love and care for Lil Ed.:Ed Sheeran:ed@gmail.com
 4:Oleksiy:Jerry:dog:Male:16:Mixed Breed:cats,dogs,children::Jerry is an old soul, but poorly trained. He knows a few tricks, and metal in his paw from a car accident. Despite his imperfections, its hard not to love him more than anything.:Oleksiy Bragina:olekB@hotmail.com
+5:kesh:Lily:cat:Female:9:Sphynx:cats,dogs,children::Lily is the sweetest kitty in the whole wide world!:Keshan Katman:kesh@gmail.com
+6:kesh:Carlisle:cat:Male:4:Maine Coon:dogs::Carlisle is a beautiful feline. Although he smells like a dog, I can assure you that he is a cat!:Keshan Katman:kesh@gmail.com

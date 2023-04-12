@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 function validPet($pet) {
     $compatibility = array();
     return ($_POST["species"] == $pet[3]
@@ -34,9 +34,10 @@ function validCompatibility($petComp) {
 
 function printPetBubble($petArr) {
     echo "<div class=\"pet-bubble\">
-    <div class=\"pet-img\"><img src=\"$petArr[8]\" alt=\"\"></div> 
+    <div class=\"pet-img\"><img src=\"$petArr[8]\" alt=\"(Image not available)\"></div> 
     <div class=\"pet-info\">
         <h1>$petArr[2]</h1>
+        <p>($petArr[3])</p>
         <ul>
             <li>$petArr[6]</li>
             <li>Age $petArr[5]</li>
@@ -49,8 +50,11 @@ function printPetBubble($petArr) {
     </div>
     <div class=\"pet-description\">
         <p>
-            \"$petArr[9]\"
+            \"$petArr[9]\" - $petArr[10]
         </p>
+        <div class=\"email\">
+            <p>Contact: $petArr[11]</p>
+        </div>
         <div class=\"interested-button-wrapper\">
             <button class=\"interested-button\">Interested</button>
         </div>
@@ -89,7 +93,7 @@ if (!isset($_POST["submit"])) {
         <div class="content">
             <?php displayValidPets(); ?>
             <!-- <div class="pet-bubble">
-                <div class="pet-img"><img src="img/pets/bert.jpg" alt=""></div>
+                <div class="pet-img"><img src="img/pets/bert.jpg" alt=" "></div>
                 <div class="pet-info">
                     <h1>Bert</h1>
                     <ul>
