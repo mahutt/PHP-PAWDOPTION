@@ -12,10 +12,8 @@ session_start();
 //     }
 // }
 
-            if (isset($_SESSION["logoutStatus"])) {
-                echo "<h2>".$_SESSION["logoutStatus"]."</h2>";
-                unset($_SESSION["logoutStatus"]);
-            }
+
+            
             
 ?><!DOCTYPE html>
 
@@ -32,7 +30,12 @@ session_start();
     <div class="main">
         <?php include 'menubox.php' ?>
         <div class="content">
-            
+            <?php 
+            if (isset($_SESSION["logoutStatus"])) {
+                echo "<h2 class=\"confirm\">".$_SESSION["logoutStatus"]."</h2>";
+                unset($_SESSION["logoutStatus"]);
+            }
+            ?>
             <h1>Welcome</h1>
             <p>
                 PAWDOPTION is a cat and dog adoption agency, devoted to finding new homes for pets in need.<br>

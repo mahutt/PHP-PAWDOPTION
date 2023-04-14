@@ -222,3 +222,7 @@ input[type=submit]:active, input[type=reset]:active, .interested-button:active {
     font-style: normal;
     background-color: #6B705C;
 }
+
+.confirm {
+    color: rgb(255, 106, 0);
+}

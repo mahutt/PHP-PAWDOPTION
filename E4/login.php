@@ -1,7 +1,12 @@
-<?php
-session_start();
+<?php session_start(); 
 $loginStatus = "";
-if (isset($_POST["submit"])) {
+if (isset($_POST["logout"])) {
+    unset($_SESSION["username"]);
+    $_SESSION["logoutStatus"] = "Successfully logged out.";
+    header("Location: home.php");
+    die();
+}
+else if (isset($_POST["login"])) {
     $users = file("db/login.txt");
     foreach ($users as $user) {
         $userData = explode(":", $user);
@@ -63,7 +68,7 @@ if (isset($_POST["submit"])) {
                         }
                     ?>
                     <br>
-                    <input type="submit" name="submit">
+                    <input type="submit" name="login" value="Login">
                     <input type="reset">
                 </div>
             </form>
