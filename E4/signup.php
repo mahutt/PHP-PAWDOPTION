@@ -16,23 +16,21 @@ function isUnique($NewUsername) {
 if (isset($_POST["submit"])) {
     if (isUnique($_POST["username"])) {
         $users = fopen("db/login.txt", "a");
-        // $newuser = $_POST["username"].":".$_POST["password"]."\n";
         fwrite($users, "\n".$_POST["username"].":".$_POST["password"]);
         fclose($users);
         $signupStatus = "Account succesfully created. Feel free to login."; 
     }
     else {
-        $signupStatus = "Error: A user with that name already Exists. Please try again."; 
+        $signupStatus = "Error: A user with that name already exists. Please try again."; 
     }
 }
-
 
 ?><!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-    <title>Pawdoption | Adoption Form</title>
+    <title>Pawdoption | New Account</title>
     <link rel="stylesheet" href="general.css">
     <meta charset="UTF-8">
 </head>
@@ -45,6 +43,14 @@ if (isset($_POST["submit"])) {
             <h1>
                 Create an Account
             </h1>
+            <?php
+                if ($signupStatus == "") {
+                    echo "<br>";
+                }
+                else {
+                    echo "<h2 class=\"confirm\">$signupStatus</h2>";
+                }
+            ?>
             <p>
                 To benefit from PAWDOPTION's services, create a new account using the form below.
             </p>
@@ -63,14 +69,6 @@ if (isset($_POST["submit"])) {
                         *Passwords may contain numbers and digits only. A password must be
                         4 characters long, and must have atleast 1 letter and atleast 1 digit.
                     </p>
-                    <?php
-                        if ($signupStatus == "") {
-                            echo "<br>";
-                        }
-                        else {
-                            echo "$signupStatus <br>";
-                        }
-                    ?>
                     <br>
                     <input type="submit" name="submit">
                     <input type="reset">

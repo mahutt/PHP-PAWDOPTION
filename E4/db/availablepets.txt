@@ -5,3 +5,7 @@
 5:kesh:Lily:cat:Female:9:Sphynx:cats,dogs,children::Lily is the sweetest kitty in the whole wide world!:Keshan Katman:kesh@gmail.com
 6:kesh:Carlisle:cat:Male:4:Maine Coon:dogs::Carlisle is a beautiful feline. Although he smells like a dog, I can assure you that he is a cat!:Keshan Katman:kesh@gmail.com
 7:samir:Poussey Cat:cat:Female:6:American Shorthair:cats,dogs,children::Poussey was named by my mother. I resent the name.:Samir Yaya:samir21@koolaid.com
+8:mid:Ball:dog:Female:30:Poodle:cats::Curly Haired, beautiful, inside and out. She bites kids.:Mid Nada:middy08@hulu.com
+9:veevee:cloud:cat:Male:5:British Shorthair:cats::Aggressive, but can be loving. He will bite if not given treats every 2 hours - and his watch never fails him.:Veeva Carloshka:veevacarlo@stokes.ca
+10:Jim:Anastasia:cat:Male:2:Persian:cats,dogs,children::Cute little thing. Too bad she gotta go! Please only reach out if you're prepared to dedicate your life to loving little Anastasia.:Jim Brown:browns@mcgill.ca
+11:kesh:Ratdog:cat:Female:11:Beagle:children::Small little doggy. Very cute. Very little. Please someone take care of her and love her, both in sickness and in health. It would name the world to me and my grandma, who named her.:Keshan Katman:kesh@gmail.com

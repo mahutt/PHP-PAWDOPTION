@@ -6,7 +6,6 @@ if (!isset($_SESSION["username"])) {
 }
 $submissionStatus = "";
 if (isset($_POST["submit"])) {
-    // echo getFormattedInfo(); FOR TESTING PURPOSES
     $pets = fopen("db/availablepets.txt", "a");
     fwrite($pets, "\n".getFormattedInfo());
     fclose($pets);
@@ -29,7 +28,7 @@ function getFormattedInfo() {
     if (isset($_POST["childcompatible"])) {$compatible[] = "children";}
 
     $info[] = implode(",", $compatible);
-    $info[] = ""; // empty image for now
+    $info[] = ""; // WILL EVENTUALLY HOLD THE IMAGE LOCATION
     $info[] = $_POST["quote"];
     $info[] = $_POST["firstName"]." ".$_POST["familyName"];
     $info[] = $_POST["email"];
@@ -54,6 +53,11 @@ function getFormattedInfo() {
             <h1>
                 <?php echo $_SESSION["username"]; ?>, do you have a pet to give away?
             </h1>
+            <?php
+                if ($submissionStatus != "") {
+                    echo "<h2 class=\"confirm\">$submissionStatus</h2>";
+                }
+            ?>
             <p>
                 Below is a form to fill out if you plan on putting your pet up for adoption with us.
                 <br>
@@ -126,11 +130,6 @@ function getFormattedInfo() {
                     <br><br>
                     <input type="submit" name="submit">
                     <input type="reset">
-                    <?php
-                        if ($submissionStatus != "") {
-                            echo "<br><br>$submissionStatus";
-                        }
-                    ?>
                 </div>
             </form>
         </div>
@@ -140,5 +139,4 @@ function getFormattedInfo() {
     <script src="script.js"></script>
 
 </body>
-
 </html>

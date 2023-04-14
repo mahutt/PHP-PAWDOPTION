@@ -1,21 +1,4 @@
-<?php 
-session_start();
-// if (isset($_POST["submit"])) {
-//     if ($_POST["submit"] == "logout") {
-//         session_destroy();
-//         header("location: home.php");
-//         die();
-//     }
-//     else {
-//         header("location: login.php");
-//         die();
-//     }
-// }
-
-
-            
-            
-?><!DOCTYPE html>
+<?php session_start(); ?><!DOCTYPE html>
 
 <html lang="en">
 
@@ -84,5 +67,4 @@ session_start();
     <script src="script.js"></script>
 
 </body>
-
 </html>

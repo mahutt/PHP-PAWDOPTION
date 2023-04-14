@@ -10,7 +10,6 @@ function validPet($pet) {
     );
 }
 
-// NOTE: MUST MAKE IT POSSIBLE TO GIVE A PET AWAY WITH SPECIFIC AGE SELECTION!
 function validPetAge($RANGE, $age) {
     if ($RANGE == "dc") {
         return true;
@@ -19,7 +18,7 @@ function validPetAge($RANGE, $age) {
         return ($age < 5);
     }
     else if ($RANGE == "5-10") {
-        return ($age > 5 && $age < 10);
+        return ($age >= 5 && $age <= 10);
     }
     else {
         return ($age > 10);
@@ -63,12 +62,17 @@ function printPetBubble($petArr) {
 }
 
 function displayValidPets() {
+    $petsfound = false;
     $pets = file("db/availablepets.txt");
     foreach ($pets as $pet) {
         $petArr = explode(":", $pet);
         if (validPet($petArr)) {
             printPetBubble($petArr);
+            $petsfound = true;
         }
+    }
+    if (!$petsfound) {
+        echo "<h2 class=\"confirm\">No available pets match your criteria.</h2>";
     }
 }
 
@@ -92,74 +96,6 @@ if (!isset($_POST["submit"])) {
         <?php include 'menubox.php' ?>
         <div class="content">
             <?php displayValidPets(); ?>
-            <!-- <div class="pet-bubble">
-                <div class="pet-img"><img src="img/pets/bert.jpg" alt=" "></div>
-                <div class="pet-info">
-                    <h1>Bert</h1>
-                    <ul>
-                        <li>labrador retriever</li>
-                        <li>Age 6</li>
-                        <li>Male</li>
-                        <li>Gets along with dogs</li>
-                        <li>Gets along with children</li>
-                    </ul>
-                </div>
-                <div class="pet-description">
-                    <p>
-                        "Bert has been a joy to raise. It's rather unfortunate that I must move away 
-                        to Britain for work, since Bert really isn't all that fond of the Europeen experience.
-                        He's a beautiful soul, inside and out!"
-                    </p>
-                    <div class="interested-button-wrapper">
-                        <button class="interested-button">Interested</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pet-bubble">
-                <div class="pet-img"><img src="img/pets/Jessica.jpg" alt=""></div> 
-                <div class="pet-info">
-                    <h1>Jessica</h1>
-                    <ul>
-                        <li>Persian</li>
-                        <li>Age 12</li>
-                        <li>Female</li>
-                        <li>Gets along with cats</li>
-                    </ul>
-                </div>
-                <div class="pet-description">
-                    <p>
-                        "Jessica loves belly rubs, cat nip, and late night walks. She sleeps after a bowl
-                        of warm milk. Big dogs scare her, but she is capable of getting along with smaller dogs.
-                        Jessica needs her ears cleaned once a week due to a chronic ear infection."
-                    </p>
-                    <div class="interested-button-wrapper">
-                        <button class="interested-button">Interested</button>
-                    </div>
-                </div>
-            </div>
-            <div class="pet-bubble">
-                <div class="pet-img"><img src="img/pets/jerry.jpg" alt=""></div> 
-                <div class="pet-info">
-                    <h1>Jerry</h1>
-                    <ul>
-                        <li>British Shorthair</li>
-                        <li>Age 9</li>
-                        <li>Male</li>
-                        <li>Gets along with cats</li>
-                        <li>Gets along with dogs</li>
-                        <li>Gets along with children</li>
-                    </ul>
-                </div>
-                <div class="pet-description">
-                    <p>
-                        "Little Jerry belonged to my mother, who deeply loved her dog. Her passing
-                        means that someone else will have the privelege to love and care for Jerry."
-                    </p>
-                    <div class="interested-button-wrapper">
-                        <button class="interested-button">Interested</button>
-                    </div>
-                </div>
-            </div> -->
             <div class="pet-bubble">
                 <p>
                     Images sources: 
@@ -173,6 +109,5 @@ if (!isset($_POST["submit"])) {
     
     <?php include 'footer.php' ?>
     <script src="script.js"></script>
-
 </body>
 </html>
