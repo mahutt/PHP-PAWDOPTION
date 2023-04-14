@@ -1,16 +1,22 @@
 <?php 
 session_start();
-if (isset($_POST["submit"])) {
-    if ($_POST["submit"] == "logout") {
-        session_destroy();
-        header("location: home.php");
-        die();
-    }
-    else {
-        header("location: login.php");
-        die();
-    }
-}
+// if (isset($_POST["submit"])) {
+//     if ($_POST["submit"] == "logout") {
+//         session_destroy();
+//         header("location: home.php");
+//         die();
+//     }
+//     else {
+//         header("location: login.php");
+//         die();
+//     }
+// }
+
+            if (isset($_SESSION["logoutStatus"])) {
+                echo "<h2>".$_SESSION["logoutStatus"]."</h2>";
+                unset($_SESSION["logoutStatus"]);
+            }
+            
 ?><!DOCTYPE html>
 
 <html lang="en">
@@ -26,6 +32,7 @@ if (isset($_POST["submit"])) {
     <div class="main">
         <?php include 'menubox.php' ?>
         <div class="content">
+            
             <h1>Welcome</h1>
             <p>
                 PAWDOPTION is a cat and dog adoption agency, devoted to finding new homes for pets in need.<br>

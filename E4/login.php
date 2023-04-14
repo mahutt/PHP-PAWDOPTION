@@ -21,7 +21,6 @@ if (isset($_POST["submit"])) {
         $loginStatus = "Error: Username not recognized.";
     }
 }
-
 ?><!DOCTYPE html>
 
 <html lang="en">

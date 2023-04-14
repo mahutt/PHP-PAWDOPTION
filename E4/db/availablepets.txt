@@ -4,3 +4,7 @@
 4:Oleksiy:Jerry:dog:Male:16:Mixed Breed:cats,dogs,children::Jerry is an old soul, but poorly trained. He knows a few tricks, and metal in his paw from a car accident. Despite his imperfections, its hard not to love him more than anything.:Oleksiy Bragina:olekB@hotmail.com
 5:kesh:Lily:cat:Female:9:Sphynx:cats,dogs,children::Lily is the sweetest kitty in the whole wide world!:Keshan Katman:kesh@gmail.com
 6:kesh:Carlisle:cat:Male:4:Maine Coon:dogs::Carlisle is a beautiful feline. Although he smells like a dog, I can assure you that he is a cat!:Keshan Katman:kesh@gmail.com
+7:samir:Poussey Cat:cat:Female:6:American Shorthair:cats,dogs,children::Poussey was named by my mother. I resent the name.:Samir Yaya:samir21@koolaid.com
+8:mid::::::::: :
+9:kesh::::::::: :
+10:nina::::::::: :

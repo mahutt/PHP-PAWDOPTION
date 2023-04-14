@@ -1,3 +1,17 @@
+<?php
+    if (isset($_POST["submit"])) {
+        if ($_POST["submit"] == "logout") {
+            unset($_SESSION["username"]);
+            $_SESSION["logoutStatus"] == "Successfully logged out.";
+            header("location: home.php");
+            die();
+        }
+        else {
+            header("location: login.php");
+            die();
+        }
+    }
+?>
 <div class="header">
     <div class="branding">
         <div class="logo">
@@ -11,7 +25,7 @@
     <div class="header-end">
         <div id="date"></div>
         <div id="logout">
-            <form action="home.php" method="POST">
+            <form action="" method="POST">
             <?php
                 if (isset($_SESSION["username"])) {
                     echo "<input type=\"submit\" name=\"submit\" value=\"logout\"></form>";

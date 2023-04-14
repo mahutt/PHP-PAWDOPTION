@@ -11,18 +11,18 @@ setInterval(displayDate, 1000);
 /* Client-side form validation for cat & dog finder forms */
 function validateCatForm() { 
     const formElements = document.forms["catform"];
-    if (!formElements["animalGender"][0].checked && !formElements["animalGender"][1].checked && !formElements["animalGender"][2].checked) {
+    if (!formElements["gender"][0].checked && !formElements["gender"][1].checked && !formElements["gender"][2].checked) {
         alert("Please choose the cat's gender.");
         return false;
     } 
-    else if (formElements["catBreed"].value == "") {
+    else if (formElements["breed"].value == "") {
         alert("Please choose the cat's breed.");
-        formElements["catBreed"].focus();
+        formElements["breed"].focus();
         return false;
     }
-    else if (formElements["catAge"].value == "") {
+    else if (formElements["age"].value == "") {
         alert("Please choose the cat's age.");
-        formElements["catBreed"].focus();
+        formElements["age"].focus();
         return false;
     }
     return true;
@@ -30,18 +30,18 @@ function validateCatForm() {
 
 function validateDogForm() { 
     const formElements = document.forms["dogform"];
-    if (!formElements["animalGender"][0].checked && !formElements["animalGender"][1].checked && !formElements["animalGender"][2].checked) {
+    if (!formElements["gender"][0].checked && !formElements["gender"][1].checked && !formElements["gender"][2].checked) {
         alert("Please choose the dog's gender.")
         return false;
     }
-    else if (formElements["dogBreed"].value == "") {
+    else if (formElements["breed"].value == "") {
         alert("Please choose the dog's breed.");
-        formElements["dogBreed"].focus();
+        formElements["breed"].focus();
         return false;
     }
-    else if (formElements["dogAge"].value == "") {
+    else if (formElements["age"].value == "") {
         alert("Please choose the dog's age.");
-        formElements["dogBreed"].focus();
+        formElements["age"].focus();
         return false;
     }
     return true;
