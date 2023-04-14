@@ -3,7 +3,7 @@ $loginStatus = "";
 if (isset($_POST["logout"])) {
     unset($_SESSION["username"]);
     $_SESSION["logoutStatus"] = "Successfully logged out.";
-    header("Location: home.php");
+    header("Location: index.php");
     die();
 }
 else if (isset($_POST["login"])) {

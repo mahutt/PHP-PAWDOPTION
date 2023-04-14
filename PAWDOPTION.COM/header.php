@@ -1,7 +1,7 @@
 <div class="header">
     <div class="branding">
         <div class="logo">
-            <a href="home.php"><img src="pawdoption_logo3.png" alt="Logo"></a>
+            <a href="index.php"><img src="pawdoption_logo3.png" alt="Logo"></a>
         </div>
         <div class="titles">
             <h1>PAWDOPTION</h1>
