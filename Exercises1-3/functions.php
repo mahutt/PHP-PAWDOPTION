@@ -22,7 +22,7 @@ function findSummation($number = 1) {
 // UPPERCASEFIRSTANDLAST METHOD DEFINITION
 function uppercaseFirstandLast($str) {
     $str[0] = strtoupper($str[0]);
-    $str[-1] = strtoupper($str[-1]);
+    $str[strlen($str)-1] = strtoupper(substr($str, -1));
     return $str;
 }
 
