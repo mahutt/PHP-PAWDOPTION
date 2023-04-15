@@ -48,6 +48,14 @@ else if (isset($_POST["login"])) {
                 Before putting a pet up for adoption, you must login to your account.<br>
                 If you don't have an account, <a href="signup.php">click here</a>.
             </p>
+            <?php
+                if ($loginStatus == "") {
+                    echo "<br>";
+                }
+                else {
+                    echo "<h2 class=\"confirm\">$loginStatus</h2><br>";
+                }
+            ?>
             <form action="" method="POST" class="bubbles" name="loginform" id="loginform" onsubmit="return validateCredentials('loginform')">
                 <div class="bubble">
                     <h2><u>Log in:</u></h2>
@@ -59,14 +67,7 @@ else if (isset($_POST["login"])) {
                     <br>
                     <input type="text" id="password" name="password">
                     <br><br>
-                    <?php
-                        if ($loginStatus == "") {
-                            echo "<br>";
-                        }
-                        else {
-                            echo "$loginStatus <br>";
-                        }
-                    ?>
+                    
                     <br>
                     <input type="submit" name="login" value="Login">
                     <input type="reset">

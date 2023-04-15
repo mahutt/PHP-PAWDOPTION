@@ -1,13 +1,7 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <title>E2</title>
-</head>
-<body>
 <?php
-$previousVisit = $_COOKIE["timeOfPreviousVisit"];
+if (isset($_COOKIE["timeOfPreviousVisit"])) {
+    $previousVisit = $_COOKIE["timeOfPreviousVisit"];
+}
 date_default_timezone_set("America/New_York");
 setcookie("timeOfPreviousVisit", date('D M d H:i:s T Y'), time() + 86400);
 if (!isset($_COOKIE['visitCount'])) {
@@ -20,5 +14,11 @@ else {
     echo "<b>Last time you visited my webpage on: ".$previousVisit."</b>";
 }
 ?>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>E2</title>
+</head>
+<body>
 </body>
 </html>
