@@ -27,7 +27,7 @@
                         Thomas Mahut is the CEO and founder of Pawdoption Inc., as well
                         the creator of this website.
                         <br><br>
-                        He was born on the 7th of October, 2002. He is a dog person, 
+                        He is a dog person, 
                         but he still has enough love for cats to have included them on his
                         website.
                     </p>
@@ -40,9 +40,9 @@
                         <br><br>
                         Name: Thomas Mahut
                         <br>
-                        Student ID: 40249811
+                        Student ID: 12345678
                         <br>
-                        Email: tommy.mahut@gmail.com
+                        Email: tman@gmail.com
                     </p>
                 </div>
             </div>
